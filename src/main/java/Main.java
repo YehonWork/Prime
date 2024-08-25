@@ -1,18 +1,18 @@
-import java.util.*;
-class Main
-{
-    public static void main(String args[])
-    {
-        String org, rvrs = ""; // Objects of String class
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter a string/number to check if it is a palindrome");
-        org = in.nextLine();
-        int length = org.length();
-        for ( int i = length - 1; i >= 0; i-- )
-            rvrs = rvrs + org.charAt(i);
-        if (org.equals(rvrs))
-            System.out.println("Entered string/number is a palindrome.");
-        else
-            System.out.println("Entered string/number isn't a palindrome.");
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter a number : ");
+        int n = s.nextInt();
+        if (n <= 1) {
+            System.out.println(n + " is not a prime number");
+        }
+        for (int i = 2; i < Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                System.out.println(n + " is not a prime number");
+            }
+        }
+        System.out.println(n + " is a prime number");
     }
-}  
+} 
